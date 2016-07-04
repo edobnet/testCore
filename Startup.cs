@@ -46,10 +46,10 @@ namespace WebApplication
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-
+    
             services.AddMvc();
-
             // Add application services.
+            services.AddTransient<Itest, Test2>();
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
         }

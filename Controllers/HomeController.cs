@@ -6,16 +6,20 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApplication.Data;
 using WebApplication.Models.EF;
+using WebApplication.Models;
 namespace WebApplication.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _db;
          private readonly ILogger<HomeController> _logger;
-        public HomeController(ApplicationDbContext db,ILogger<HomeController> logger)
+         private readonly Itest _test;
+
+        public HomeController(ApplicationDbContext db,ILogger<HomeController> logger,Itest test)
         {
             _db = db;
             _logger =  logger;
+            _test = test;
         }
         public IActionResult Index()
         {
@@ -25,7 +29,9 @@ namespace WebApplication.Controllers
                Name="test111",
            }.SetDefault());
            _db.SaveChanges();
-            return View();
+
+           return Content(_test.Do());
+           // return View();
         }
 
         public IActionResult About()
