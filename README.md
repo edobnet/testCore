@@ -1,4 +1,4 @@
- my firest Test Application
+ my firest Test Application with [Visual Studio Code](https://www.visualstudio.com/en-us/products/code-vs.aspx)
 # Welcome to ASP.NET Core
 
 We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.
