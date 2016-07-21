@@ -23,6 +23,7 @@ namespace WebApplication.Controllers
         }
         public IActionResult Index()
         {
+            
             _logger.LogInformation("ssssssssssss");
            _db.Add(new ShopInfo()
            {
